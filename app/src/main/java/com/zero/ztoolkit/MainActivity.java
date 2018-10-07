@@ -7,6 +7,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.content.res.AssetManager;
 
+import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -33,6 +35,8 @@ public class MainActivity extends Activity {
                     Shell.getShell();
         } catch (Exception e) {
                     e.printStackTrace();
+                    Toast.makeText(MainActivity.this,
+                    	    "ERROR: Unable to get root access!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -59,6 +63,8 @@ public class MainActivity extends Activity {
 		       }
 		    } catch (Exception e) {
 		    e.getMessage();
+                    Toast.makeText(MainActivity.this,
+                    	    "ERROR: Unable to copy assets to internal directory!", Toast.LENGTH_SHORT).show();
 		  }
 		} 
 
