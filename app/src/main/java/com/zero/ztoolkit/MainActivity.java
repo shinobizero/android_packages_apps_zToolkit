@@ -1,4 +1,4 @@
-package com.zero.android.ztoolkit;
+package com.zero.ztoolkit;
 
 import android.app.Activity;
 import android.content.Context;
