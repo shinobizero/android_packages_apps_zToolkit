@@ -13,15 +13,26 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import com.topjohnwu.superuser.Shell;
+
 public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        CheckForRoot();
 	Context context = getApplicationContext();
 	copyFile(context);
         LaunchTerminalEmulator term = new LaunchTerminalEmulator();
         term.execute();
+    }
+
+    private void CheckForRoot() {
+        try {
+                    Shell.getShell();
+        } catch (Exception e) {
+                    e.printStackTrace();
+        }
     }
 
     private void copyFile(Context context) {
