@@ -1,3 +1,5 @@
 #!/system/bin/sh
 
-printf "\n\This is a test script!!!\n" 
+clear
+printf "\n This is a test script!!!\n"
+printf "\n \n"
