@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/wordmark" />
+
+    <ImageButton
+        android:id="@+id/imageButton01"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:background="@null"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/button_dummy" />
+
+    <ImageButton
+        android:id="@+id/imageButton02"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:background="@null"
+        android:layout_below="@+id/imageButton01"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/button_dummy" />
+
+    <ImageButton
+        android:id="@+id/imageButton03"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:background="@null"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageButton01"
+        android:src="@drawable/button_dummy" />
+
+    <ImageButton
+        android:id="@+id/imageButton04"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:background="@null"
+        android:layout_below="@+id/imageButton01"
+        android:layout_alignRight="@+id/imageButton03"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/button_dummy" />
+
+    <ImageButton
+        android:id="@+id/imageButton05"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:background="@null"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageButton03"
+        android:src="@drawable/button_dummy" />
+
+</RelativeLayout>

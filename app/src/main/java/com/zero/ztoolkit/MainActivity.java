@@ -7,6 +7,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.content.res.AssetManager;
 
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.io.File;
@@ -19,15 +22,28 @@ import com.topjohnwu.superuser.Shell;
 
 public class MainActivity extends Activity {
 
+    ImageButton imageButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+	// Start Up Functions
         CheckForRoot();
 	Context context = getApplicationContext();
 	copyFile(context);
 	setScriptsPermissions();
-        LaunchTerminalEmulator term = new LaunchTerminalEmulator();
-        term.execute();
+
+        setContentView(R.layout.activity_wheel);
+
+	// Create Buttons
+        toolButton01();
+        toolButton02();
+        toolButton03();
+        toolButton04();
+        toolButton05();
+
+
     }
 
     private void CheckForRoot() {
@@ -73,7 +89,7 @@ public class MainActivity extends Activity {
 	Shell.Sync.su("chmod a+x /data/data/com.zero.ztoolkit/files/scripts/*");
     }
 
-    private class LaunchTerminalEmulator extends AsyncTask<Void, Void, Void> {
+    private class LaunchDummyScript extends AsyncTask<Void, Void, Void> {
         private static final String INITIAL_COMMAND = "/data/data/com.zero.ztoolkit/files/scripts/dummy.sh";
         private static final String INITIAL_COMMAND_PROPERTY = "com.zero.zterm.iInitialCommand";
         private static final String REMOTE_INTENT = "com.zero.zterm.RUN_SCRIPT_SU";
@@ -94,5 +110,81 @@ public class MainActivity extends Activity {
         }
         @Override
         protected void onPostExecute(Void result) {finishAndRemoveTask();}
+    }
+
+    public void toolButton01() {
+
+        imageButton = (ImageButton) findViewById(R.id.imageButton01);
+        final LaunchDummyScript term = new LaunchDummyScript();
+
+        imageButton.setOnClickListener(new OnClickListener() {
+        
+            @Override
+            public void onClick(View arg0) {
+
+                term.execute();
+
+            }
+        });
+    }
+        public void toolButton02() {
+
+            imageButton = (ImageButton) findViewById(R.id.imageButton02);
+
+            imageButton.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View arg0) {
+
+                    Toast.makeText(MainActivity.this,
+                            "This tool is currently unavailable!", Toast.LENGTH_SHORT).show();
+
+                }
+            });
+    }
+    public void toolButton03() {
+
+        imageButton = (ImageButton) findViewById(R.id.imageButton03);
+
+        imageButton.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Toast.makeText(MainActivity.this,
+                        "This tool is currently unavailable!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+    public void toolButton04() {
+
+        imageButton = (ImageButton) findViewById(R.id.imageButton04);
+
+        imageButton.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Toast.makeText(MainActivity.this,
+                        "This tool is currently unavailable!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+    public void toolButton05() {
+
+        imageButton = (ImageButton) findViewById(R.id.imageButton05);
+
+        imageButton.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Toast.makeText(MainActivity.this,
+                        "This tool is currently unavailable!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }
