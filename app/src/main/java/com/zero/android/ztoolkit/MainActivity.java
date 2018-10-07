@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
         CheckForRoot();
 	Context context = getApplicationContext();
 	copyFile(context);
+	setScriptsPermissions();
         LaunchTerminalEmulator term = new LaunchTerminalEmulator();
         term.execute();
     }
@@ -60,6 +61,11 @@ public class MainActivity extends Activity {
 		    e.getMessage();
 		  }
 		} 
+
+    private void setScriptsPermissions() {
+	Shell.Sync.su("chmod 777 /data/data/com.zero.ztoolkit/files/scripts/*");
+	Shell.Sync.su("chmod a+x /data/data/com.zero.ztoolkit/files/scripts/*");
+    }
 
     private class LaunchTerminalEmulator extends AsyncTask<Void, Void, Void> {
         private static final String INITIAL_COMMAND = "/data/data/com.zero.ztoolkit/files/scripts/dummy.sh";
